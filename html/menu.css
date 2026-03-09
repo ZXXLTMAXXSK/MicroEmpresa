@@ -1,0 +1,345 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Estilos base del nav - TU CÓDIGO CON MÍNIMAS CORRECCIONES */
+nav {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+nav .contnav {
+    width: 80%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition-duration: 0.3s; /* Cambié a 0.3s para que sea más rápido */
+    padding: 0 20px;
+    list-style: none;
+}
+
+nav .contnav:hover {
+    transition-duration: 0.3s;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+nav .contnav li {
+    list-style: none;
+    display: flex;
+}
+
+nav .contnav li a {
+    color: black; /* TEXTO EN NEGRO (ya lo tenías) */
+    text-shadow: 1px 1px 3px wheat;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+/* NUEVO: Estilos para el icono hamburguesa - AHORA EN NEGRO */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: black; /* CAMBIADO DE WHITE A BLACK */
+    margin: 3px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Media query para móviles */
+@media screen and (max-width: 768px) {
+    nav .contnav {
+        width: 90%;
+        justify-content: space-between;
+        padding-right: 15px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 50px;
+    }
+
+    /* Mostrar icono hamburguesa */
+    .menu-toggle {
+        display: flex;
+        order: 2;
+    }
+
+    /* Ocultar el enlace "Regresar" por defecto */
+    nav .contnav li:last-child {
+        display: none;
+        width: 100%;
+        text-align: center;
+        order: 3;
+    }
+
+    /* Estilos para el menú activo */
+    nav .contnav.active {
+        padding-bottom: 15px;
+    }
+
+    nav .contnav.active li:last-child {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    nav .contnav.active li:last-child a {
+        margin: 0;
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Animación del icono hamburguesa en negro */
+    nav .contnav.active .menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        background-color: black;
+    }
+
+    nav .contnav.active .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav .contnav.active .menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+        background-color: black;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media screen and (max-width: 480px) {
+    nav .contnav {
+        width: 95%;
+        padding: 5px 10px;
+    }
+    
+    nav .contnav li img {
+        width: 100px;
+    }
+    
+    .menu-toggle span {
+        width: 22px;
+        height: 2.5px;
+    }
+}
+
+
+/* ESTILOS PARA LA SECCION PRECIOS */
+#precios {
+    background-image: url(./imgs/graf.svg);
+    height: 100vh; /* Ocupa el alto de la pantalla */
+    background-repeat: space;
+    background-size: cover;
+    background-size: auto; /* O contain, según como se vea tu SVG */
+
+    /* IMPORTANTE PARA CENTRAR EL CONTENIDO */
+    display: flex;
+    align-items: center;      /* Centra verticalmente */
+    justify-content: center;   /* Centra horizontalmente */
+    margin: 0;                 /* Elimina márgenes por defecto */
+    padding: 20px;             /* Espaciado interno para pantallas pequeñas */
+    box-sizing: border-box;
+}
+
+/* CONTENEDOR CENTRADO (FLEXBOX) */
+.contenedor-precios {
+    display: flex;             /* Coloca las carts en fila (horizontal) */
+    flex-wrap: wrap;           /* Permite que bajen si no caben (responsive) */
+    gap: 30px;                 /* Espacio entre las carts */
+    justify-content: center;   /* Centra las carts si están en wrap */
+    align-items: stretch;      /* Hace que ambas carts midan lo mismo de alto */
+    max-width: 1000px;         /* Ancho máximo del contenedor */
+    width: 100%;               /* Ocupa el ancho disponible */
+}
+
+/* ESTILOS DE CADA CARTA */
+.carts {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de vidrio (opcional) */
+    border-radius: 20px;        /* Bordes redondeados */
+    padding: 30px 25px;         /* Espaciado interno */
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2); /* Sombra para que resalte */
+    flex: 1 1 280px;            /* Crece, se encoge, base de 280px */
+    max-width: 350px;           /* No crecerá más de 350px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al hacer hover */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #2c2c2c;             /* Color de texto oscuro para que contraste */
+}
+
+/* Efecto hover en las carts */
+.carts:hover {
+    transform: translateY(-10px); /* Se levanta un poco */
+    box-shadow: 0 30px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* CLASES DE ANIMACION DE ANIMATE.CSS (las definimos manualmente por si acaso) */
+.animacion-izquierda {
+    animation: fadeInLeftBig 1s ease forwards;
+}
+
+.animacion-derecha {
+    animation: fadeInRightBig 1s ease forwards;
+}
+
+/* ICONO DE LA CARTA */
+.icono-carts {
+    font-size: 4rem;          /* Tamaño grande del emoji */
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* TITULOS DE LA CARTA */
+.carts h3 {
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.subtitulo-carts {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* LINEA SEPARADORA */
+.carts hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #b35e2e, transparent); /* Color café */
+    margin: 20px 0;
+}
+
+/* ESTILOS DE CADA FILA DE PRODUCTO */
+.item-precio {
+    display: flex;
+    justify-content: space-between; /* Producto a la izquierda, precio a la derecha */
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    padding: 0 5px;
+}
+
+.item-precio .precio {
+    font-weight: 800;
+    color: #a0522d; /* Color café */
+    font-size: 1.3rem;
+}
+
+/* DESCRIPCION CORTA */
+.descripcion-corta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+}
+
+/* BOTON DE LA CARTA */
+.boton-carts {
+    display: block;           /* Para poder centrarlo con margin auto */
+    width: fit-content;       /* Ajusta el ancho al contenido */
+    margin: 0 auto;           /* Centrar horizontalmente */
+    padding: 12px 30px;
+    background-color: #6b4f3c; /* Color café oscuro */
+    color: white;
+    border: none;
+    border-radius: 50px;      /* Muy redondeado */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid #8b6b51;
+}
+
+.link{
+    text-decoration: none;
+    color: white !important;
+}
+
+.boton-carts:hover {
+    background-color: #8b6b51; /* Café más claro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* KEYFRAMES PARA LAS ANIMACIONES (en caso de que no cargue Animate.css) */
+@keyframes fadeInLeftBig {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRightBig {
+    0% {
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* RESPONSIVE: Cuando el ancho sea menor a 700px */
+@media (max-width: 700px) {
+    #precios {
+        height: auto;           /* La altura ya no es fija, se ajusta al contenido */
+        min-height: 100vh;      /* Como mínimo ocupa toda la pantalla */
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); /* Forma más simple para móvil (opcional) */
+        padding: 40px 20px;
+    }
+
+    .contenedor-precios {
+        gap: 20px;              /* Reduce el espacio entre carts */
+    }
+
+    .carts {
+        padding: 25px 20px;     /* Padding más pequeño en móvil */
+    }
+
+    .carts h3 {
+        font-size: 1.5rem;
+    }
+
+    .item-precio {
+        font-size: 1rem;
+    }
+
+    .item-precio .precio {
+        font-size: 1.2rem;
+    }
+}
