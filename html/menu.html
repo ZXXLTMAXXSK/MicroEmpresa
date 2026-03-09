@@ -1,76 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./menu.css">
-    <link rel="shortcut icon" href="./imgs/logoo.png" type="image/x-icon">
-    <title>Nuestros Precios</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="menu.css">
+<link rel="shortcut icon" href="./imgs/logoo.png">
+
+<title>Nuestros Precios</title>
 </head>
+
 <body>
-    
-   <nav>
-    <div class="contnav">
-        <li><img src="./imgs/pree.png" alt="Logo" width="140"></li>
-        
-        <!-- ICONO HAMBURGUESA AÑADIDO -->
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
-        <li><a href="../index.html">Regresar</a></li>
-    </div>
-</nav>
 
-<!-- Script para el funcionamiento -->
-<script>
-    document.getElementById('menuToggle').addEventListener('click', function() {
-        document.querySelector('.contnav').classList.toggle('active');
-    });
-</script>
+<section id="precios">
 
-    <section id="precios">
+<div class="contenedor-precios">
 
-    <div class="contenedor-precios">
-        <!-- CARTS 1: POSTRES -->
-        <div class="carts animacion-izquierda">
-            <div class="icono-carts"><img src="./imgs/logoo.png" alt="logo" width="80"></div>
-            <h3><img src="./imgs/imagetira.png" alt=""></h3>
-            <p class="subtitulo-carts">Nuestra especialidad italiana</p>
-            <hr>
-            <div class="item-precio">
-                <span>Tiramisú (Chico)</span>
-                <span class="precio">$35</span>
-            </div>
-            <div class="item-precio">
-                <span>Tiramisú (Grande)</span>
-                <span class="precio">$45</span>
-            </div>
-            <p class="descripcion-corta">Porciones individuales o familiares. Un delicioso Postre.</p>
-                        <button class="boton-carts"><a href="https://www.instagram.com/coffecakee_08/?utm_source=ig_web_button_share_sheet" class="link">PEDIR</a></button>
-        </div>
+<!-- CART 1 -->
+<div class="carts animacion-izquierda">
 
-        <!-- CARTS 2: BEBIDAS -->
-        <div class="carts animacion-derecha">
-            <div class="icono-carts"><img src="./imgs/logoo.png" alt="logo" width="80"></div>
-            <h3><img src="./imgs/image.png" alt="" width="260"></h3>
-            <p class="subtitulo-carts">Granos 100%</p>
-            <hr>
-            <div class="item-precio">
-                <span>Café (Chico)</span>
-                <span class="precio">$40</span>
-            </div>
-            <div class="item-precio">
-                <span>Café (Grande)</span>
-                <span class="precio">$50</span>
-            </div>
-            <p class="descripcion-corta">Bebidas preparadas al momento por nosotros. Incluye arte latte.</p>
-            <button class="boton-carts"><a href="https://www.instagram.com/coffecakee_08/?utm_source=ig_web_button_share_sheet" class="link">PEDIR</a></button>
-        </div>
-    </div>
+<div class="icono-carts">
+<img src="./imgs/logoo.png" alt="logo">
+</div>
 
+<h3>
+<img src="./imgs/imagetira.png" alt="Tiramisu">
+</h3>
+
+<p class="subtitulo-carts">Nuestra especialidad italiana</p>
+
+<hr>
+
+<div class="item-precio">
+<span>Tiramisú (Chico)</span>
+<span class="precio">$35</span>
+</div>
+
+<div class="item-precio">
+<span>Tiramisú (Grande)</span>
+<span class="precio">$45</span>
+</div>
+
+<p class="descripcion-corta">
+Porciones individuales o familiares. Un delicioso postre.
+</p>
+
+<a href="https://www.instagram.com/coffecakee_08/?utm_source=ig_web_button_share_sheet"
+class="boton-carts">
+PEDIR
+</a>
+
+</div>
+
+<!-- CART 2 -->
+<div class="carts animacion-derecha">
+
+<div class="icono-carts">
+<img src="./imgs/logoo.png" alt="logo">
+</div>
+
+<h3>
+<img src="./imgs/image.png" alt="Cafe">
+</h3>
+
+<p class="subtitulo-carts">Granos 100%</p>
+
+<hr>
+
+<div class="item-precio">
+<span>Café (Chico)</span>
+<span class="precio">$40</span>
+</div>
+
+<div class="item-precio">
+<span>Café (Grande)</span>
+<span class="precio">$50</span>
+</div>
+
+<p class="descripcion-corta">
+Bebidas preparadas al momento por nosotros. Incluye arte latte.
+</p>
+
+<a href="https://www.instagram.com/coffecakee_08/?utm_source=ig_web_button_share_sheet"
+class="boton-carts">
+PEDIR
+</a>
+
+</div>
+
+</div>
 </section>
 
 </body>
